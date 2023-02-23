@@ -1,3 +1,5 @@
+# I might add single files to compile with rustc, but for now, this is just a library
+
 [package]
 name = "leet"
 version = "0.1.0"
