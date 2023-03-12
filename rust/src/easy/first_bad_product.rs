@@ -15,6 +15,7 @@ You are given an API bool isBadVersion(version) which returns whether version is
 // isBadVersion(version:i32)-> bool;
 // to call it use self.isBadVersion(version)
 
+
 impl Solution {
     pub fn first_bad_version(&self, n: i32) -> i32 {
         let mut i = n / 2;

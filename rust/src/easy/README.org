@@ -1,0 +1,3 @@
+#+title: Rust Easy Solutions
+
+ This section indicates easy solutions on leetcode.org written in rust programming language.
