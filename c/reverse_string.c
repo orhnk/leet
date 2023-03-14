@@ -5,7 +5,6 @@
 
 #include <assert.h>
 
-
 char* reverse_string(char*);
 
 int main() {
