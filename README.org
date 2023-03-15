@@ -2,8 +2,20 @@
 --------------------------------------
 leetcode question and solution samples
 
+* Philosophy:
+This repository stores my answers to some random leetcode questions. I generally have the best solution with mine at files. Also sometimes I am just givving up and not finnishing the algorithm. (I am trying to include //NOT WORKING like first-line comments to indicate that) So feel free to create a pull request and merge it to the repository or wait for it till I fix it (If I do)
+
 * Thoughts:
 Mainly Rust? I think I might taste a bit of algorithms juice
+
+* Trying:
+To try anything in this repository you will use (if I don't change it after) =rustc= which is the rust compiler that allows you to compile manually (normally rustc is managed by [[https://en.wikipedia.org/wiki/Rust_(programming_language)][rust]] package manager called [[https://en.wikipedia.org/wiki/Rust_(programming_language)][cargo]] automatically)
+It works pretty much same as [[https://gcc.gnu.org/][GNU Compiler Collection]] (C/C++ compiler) but it is for rust.
+
+You just need to do:
+=rustc <filename>.rs; ./<filename>=
+
+to be able to compile and run the file. (unlike gcc it compiles directly to the filename instead of ~a.out~ which is good)
 
 * LICENSE:
 #+begin_src text

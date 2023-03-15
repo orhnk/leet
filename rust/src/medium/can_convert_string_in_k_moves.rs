@@ -1,3 +1,5 @@
+// NOT WORKING AT THE MOMENT!
+
 /*
 
 1540. Can Convert String in K Moves
@@ -20,19 +22,24 @@ Return true if it's possible to convert s into t in no more than k moves, otherw
  */
 
 // impl Solution {
+impl Solution {
     pub fn can_convert_string(s: String, t: String, k: i32) -> bool {
-        /*This algorithm decreases k by the possiblity if k gets smaller than zero that means current state is impossible*/
-        let mut moved = 0;
+        let mut h = std::collections::HashSet::new();
         let s = s.as_bytes();
         let t = t.as_bytes();
         let len = s.len();
+        if len != t.len() {
+            return false;
+        }
         for i in 0..len {
             if s[i] != t[i] {
-                moved += i32::abs(s[i] - t[i]);
-                continue
-            }
-            if moved as i32 > k {
-                return false;
+                dbg!(s[i] as char, t[i] as char);
+                let ex = dbg!(s[i] as i32 - t[i] as i32).abs();
+                if (h.iter().filter(|&j| *j == ex).count() as i32 > k / 26) || ex > k {
+                    return false;
+                }
+                h.insert(ex);
+                continue;
             }
         }
         true
