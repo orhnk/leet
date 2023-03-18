@@ -32,9 +32,7 @@ fn main() {
 }
 
 struct Solution();
-/*
- * 429 / 507 testcases passed
- */
+
 impl Solution {
     pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
         /* This program will look at the rows coulumns and 3x3 cubes and will search for dupes. If there is a dupe It will return false, else true */
@@ -55,7 +53,7 @@ impl Solution {
         let slots = len / 3;
         for i in 0..slots {
             for j in 0..slots {
-                if Self::has_dupe_cube(&board, i*3, j*3, slots) {
+                if Self::has_dupe_cube(&board, i * 3, j * 3, slots) {
                     return false;
                 }
             }
