@@ -24,11 +24,14 @@ fn main() {
 
 // This could be a bit of cheating. But The question did not indicate that was immutable (in python you can do it in the safe way :even in the fastest answer:)
 struct Solution;
+
+// This Solution was the both fastest and most memory efficient
 impl Solution {
     pub fn rotate_string(s: String, goal: String) -> bool {
         unsafe {
             return s.len() == goal.len() && {
-                (*(&goal as *const String as *mut String)).push_str(&goal);
+                // (*(&goal as *const String as *mut String)).push_str(&goal); // Unsafe mutability (kinda like interior mutability but more honest)
+                let goal = format!("{}{}", goal, goal);
                 goal.contains(&s)
             };
         }
