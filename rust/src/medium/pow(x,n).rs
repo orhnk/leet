@@ -12,7 +12,6 @@ Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
  */
 
 
-
 // impl Solution {
     pub fn my_pow(x: f64, n: i32) -> f64 {
         let mut res = 1_f64;

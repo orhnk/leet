@@ -1,0 +1,7 @@
+#+title: Haskell
+
+* Purely Functional, Purely Experimental
+I am not near knowladged to get good-qualifications on haskell. but! writing algorithms in haskell seems to be more elegant and joyful? so I have decided to add a haskell directory here.
+
+* leetcode.org does not support haskell
+as you probably know leetcode does not support haskell (it's an esolang [kinda]) so its natural to see less solutions in this section
