@@ -1,30 +1,43 @@
 #!/usr/bin/env run-cargo-script
+
+fn main() {
+    let s = "([)]".to_owned();
+    let r = Solution::is_valid(s);
+
+    println!("{r}");
+}
+
+struct Solution;
 impl Solution {
+    // First take:
+    /*
     pub fn is_valid(s: String) -> bool {
-        let (mut b, mut c, mut sq) = (0, 0, 0); // braces, square " ", curly " "
-        s.chars().for_each(|i| {
-            if i == '(' {
-                b += 1;
-            }
-            if i == ')' {
-                b -= 1;
-            }
-            if i == '{' {
-                c += 1;
-            }
-            if i == '}' {
-                c -= 1;
-            }
-            if i == '[' {
-                sq += 1;
-            }
-            if i == ']' {
-                sq -= 1;
-            }
-        });
-    if b == 0 && c == 0 && sq == 0 {
-        return true;
+        let s = unsafe { &mut *(&s as *const String as *mut String) };
+        while s.contains("()") || s.contains("[]") || s.contains("{}") {
+            *s = s.replace("()", "");
+            *s = s.replace("[]", "");
+            *s = s.replace("{}", "");
+        }
+        if s.len() == 0 {
+            return true;
+        }
+        false
     }
-    false
+    */
+
+    // Second take: 
+    pub fn is_valid(s: String) -> bool {
+        let mut stack = Vec::new();
+        for i in s.chars() {
+            match i {
+                '{' => stack.push('}'),
+                '(' => stack.push(')'),
+                '[' => stack.push(']'),
+                '}'|')'|']' if Some(i) != stack.pop() => return false,
+                _ => (),
+            }
+        }   
+        return stack.is_empty();
     }
+
 }
